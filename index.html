@@ -10,27 +10,28 @@
 </head>
 
 <body>
-  <h2>Tic Tac Toe</h2>
+  <h2 class="text">Tic Tac Toe</h2>
   <div class="board">
     <div id="row-1">
-      <div id="cell-0"></div>
-      <div id="cell-1"></div>
-      <div id="cell-2"></div>
+      <div id="cell-0" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
+      <div id="cell-1" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
+      <div id="cell-2" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
     </div>
     <div id="row-2">
-      <div id="cell-3"></div>
-      <div id="cell-4"></div>
-      <div id="cell-5"></div>
+      <div id="cell-3" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
+      <div id="cell-4" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
+      <div id="cell-5" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
     </div>
     <div id="row-3">
-      <div id="cell-6"></div>
-      <div id="cell-7"></div>
-      <div id="cell-8"></div>
+      <div id="cell-6" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
+      <div id="cell-7" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
+      <div id="cell-8" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
     </div>
   </div>
 
   <div class="status">
-    <button id="start" type="button">Start Game</button>
+    <p class="text" id="turnIdentifier" hidden=true></p>
+    <button class="text" id="start" type="button">Start Game</button>
   </div>
   <script src="main.js"></script>
 </body>
