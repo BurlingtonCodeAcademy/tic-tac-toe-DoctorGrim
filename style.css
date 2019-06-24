@@ -1,3 +1,7 @@
+*{
+  font-family: 'Permanent Marker', cursive;
+  color: blueviolet;
+}
 body {
   background-color: rgb(100, 100 ,255);
   width: 1000px;
@@ -7,13 +11,24 @@ body {
   user-select: none;
   background-image: url(media/vapor.jpg);
   background-size: 100% auto;
+  font-family: 'Permanent Marker', cursive;
 }
-
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 h2 {
   height: auto;
   margin-top: 0px;
+  flex-grow: 3;
 }
-
+input{
+  background-color:rgba(0,0,40,.5);
+  border: 0px;
+  width: 40px;
+  flex-grow: 1
+}
 span{
   font-size: 75px;
   margin-top: 20px;
@@ -22,19 +37,26 @@ span{
 button{
   background-color: blue;
   border: 0px;
-  width: 200px;
+  width: 280px;
   height: 50px;
   margin: 5px;
 }
 .text{
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
   color: blueviolet;
 }
 #turnIdentifier{
   background-color: blue;
   border: 0px;
-  width: 200px;
+  width: 280px;
+  height: 50px;
+  margin: 5px;
+}
+#timer{
+  background-color: blue;
+  border: 0px;
+  width: 280px;
   height: 50px;
   margin: 5px;
 }

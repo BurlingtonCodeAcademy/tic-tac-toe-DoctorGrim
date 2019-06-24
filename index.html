@@ -6,11 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tic Tac Toe</title>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet"> 
   <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <audio controls loop>
+        <source src="media/8bit Stage4 Loop.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio> 
+  <header>
+      <input type="text" name="name1" id="player1Name" class="text" value="Player1"></input>
   <h2 class="text">Tic Tac Toe</h2>
+    <input name="name2" id="player2Name" class="text" value="Player2"></input>
+  </header>
   <div class="board">
     <div id="row-1">
       <div id="cell-0" class="cell"><img src="media/explosions-transparent-pixelated-2.gif" class="explosion" hidden=true></div>
@@ -31,7 +40,9 @@
 
   <div class="status">
     <p class="text" id="turnIdentifier" hidden=true></p>
-    <button class="text" id="start" type="button">Start Game</button>
+    <button class="text start" id="start1Player" type="button">Start 2 player Game</button>
+    <button class="text start" id="AIstart" type="button">Start 1 player Game</button>
+    <p class="text" id="timer" hidden=true></p>
   </div>
   <script src="main.js"></script>
 </body>
