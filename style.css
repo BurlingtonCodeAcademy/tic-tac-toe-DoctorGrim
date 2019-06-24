@@ -1,9 +1,10 @@
-*{
-  font-family: 'Permanent Marker', cursive;
+* {
+  font-family: "Permanent Marker", cursive;
   color: blueviolet;
 }
+/*TODO add more gaudy 80's cyperpunk elements*/
 body {
-  background-color: rgb(100, 100 ,255);
+  background-color: rgb(100, 100, 255);
   width: 1000px;
   margin: 10px auto;
   text-align: center;
@@ -11,64 +12,73 @@ body {
   user-select: none;
   background-image: url(media/vapor.jpg);
   background-size: 100% auto;
-  font-family: 'Permanent Marker', cursive;
 }
-header{
+
+header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 h2 {
   height: auto;
   margin-top: 0px;
   flex-grow: 3;
 }
-input{
-  background-color:rgba(0,0,40,.5);
+
+input {
+  background-color: rgba(0, 0, 40, 0.5);
   border: 0px;
   width: 40px;
-  flex-grow: 1
+  flex-grow: 1;
 }
-span{
+
+span {
   font-size: 75px;
   margin-top: 20px;
 }
 
-button{
+button {
   background-color: blue;
   border: 0px;
   width: 280px;
   height: 50px;
   margin: 5px;
 }
-.text{
+
+#turnIdentifier {
+  background-color: blue;
+  border: 0px;
+  width: 280px;
+  height: 50px;
+  margin: 5px;
+}
+
+#timer {
+  background-color: blue;
+  border: 0px;
+  width: 280px;
+  height: 50px;
+  margin: 5px;
+}
+
+#start {
+  color: black;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+}
+
+.cell {
+  font-size: 150px;
+}
+
+.text {
   font-size: 24px;
   text-align: center;
   color: blueviolet;
-}
-#turnIdentifier{
-  background-color: blue;
-  border: 0px;
-  width: 280px;
-  height: 50px;
-  margin: 5px;
-}
-#timer{
-  background-color: blue;
-  border: 0px;
-  width: 280px;
-  height: 50px;
-  margin: 5px;
-}
-#start{
-  color: black;
-}
-.status{
-  display: flex;
-  justify-content: center
-}
-.cell{
-  font-size: 150px;
 }
 
 div[id^="row-"] div {
@@ -76,7 +86,6 @@ div[id^="row-"] div {
   height: 200px;
   border: 6px solid purple;
   float: left;
-
 }
 
 div[id^="row-"] div:last-child {
@@ -87,12 +96,12 @@ div[id^="row-"] div:first-child {
   border-left: none;
 }
 
-div[id="row-1"] div{
+div[id="row-1"] div {
   border-top: none;
 }
 
-div[id="row-3"] div{
-    border-bottom: none;
+div[id="row-3"] div {
+  border-bottom: none;
 }
 
 div[id^="row-"] {
@@ -107,5 +116,5 @@ div.board {
   overflow: hidden;
   margin: 0 auto;
   border-radius: 20px;
-  background-image: radial-gradient( orange, aqua, rgb(48, 0, 87));
+  background-image: radial-gradient(orange, aqua, rgb(48, 0, 87));
 }

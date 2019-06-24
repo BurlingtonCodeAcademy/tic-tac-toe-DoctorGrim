@@ -2,7 +2,7 @@ let player = {
   player1: {
     name: "player1",
     letter: "X",
-    winVal: 1 //when the sum of a row/col or diagonal is 3 the win condition is triggered
+    winVal: 1 //when the abs(sum) of a row/col or diagonal is 3 the win condition is triggered
   },
   player2: {
     name: "player2",
@@ -57,6 +57,16 @@ function startGame() {
   }
 }
 
+function resetGame(){ //TODO is there a better way? looks fugly
+  start.disabled = false;
+  AIstart.disabled = false;
+  start.hidden = false;
+  AIstart.hidden = false;
+  status.hidden = true;
+  timer.hidden = true;
+  player.AI = false;
+}
+
 function switchPlayer() {
   [player.curentPlayer, player.nextPlayer] = [
     player.nextPlayer,
@@ -95,18 +105,18 @@ function turn(cell) {
 function checkWin() {
   let winArr = [];
   Object.keys(cells).forEach(cell => winArr.push(cells[cell].ticTacToe));
-  let ticTacToe = [winArr.slice(0, 3), winArr.slice(3, 6), winArr.slice(6, 9)]; //maps the values into a tic tac toe board
+  let ticTacToe = [winArr.slice(0, 3), winArr.slice(3, 6), winArr.slice(6, 9)]; //converts the values in the array into a tic tac toe board
   let sum = (total, newValue) => total + newValue;
   let rowSum = ticTacToe.map(row => row.reduce(sum)); //maps the sum of each row if one is 3 then there is abs(3) then there are 3 X's or O's
   let colSum = ticTacToe.reduce((total, newRow) =>
     total.map((cellValue, index) => cellValue + newRow[index])
   );
-
   let rowColSum = rowSum.concat(colSum);
+
   let leftDiagnal = 0,
     rightDiagnal = 0;
   for (let row = 0; row < ticTacToe.length; row++) {
-    leftDiagnal += ticTacToe[row][row];
+    leftDiagnal += ticTacToe[row][row];          //tree rows takes arr[0][0] arr[1][1] and arr[2][2] can expand into 4x4 tic tac toe
     rightDiagnal += ticTacToe[row][ticTacToe.length - row - 1];
   }
   rowColSum.push(leftDiagnal);
@@ -114,29 +124,17 @@ function checkWin() {
   let win = rowColSum.find(three => three == 3 || three == -3);
   if (win) {
     Object.keys(cells).forEach(cell => {
-      if (cells[cell].ticTacToe == player[player.curentPlayer].winVal) {
+      if (cells[cell].ticTacToe == player[player.curentPlayer].winVal) { //TODO explodes all wining players cells, improve to only explode wining three
         cells[cell].innerHTML =
           '<img src="media/explosions-transparent-pixelated-2.gif" class="explosion"></img>';
         var explosion = new Audio("media/SFX_Explosion_14.wav");
         explosion.play();
       }
     });
-    start.disabled = false; //resets game
-    AIstart.disabled = false;
-    start.hidden = false;
-    AIstart.hidden = false;
-    status.hidden = true;
-    timer.hidden = true;
-    player.AI = false;
-    alert("win!");
+    resetGame();
+    alert(player[player.curentPlayer].name+" win's!");
   } else if (!winArr.includes(0)) {
-    start.disabled = false;
-    AIstart.disabled = false;
-    start.hidden = false;
-    AIstart.hidden = false;
-    status.hidden = true;
-    timer.hidden = true;
-    player.AI = false;
+    resetGame();
     alert("Tie!");
   }
 }
