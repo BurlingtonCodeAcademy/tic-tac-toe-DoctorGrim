@@ -132,7 +132,7 @@ function checkWin() {
       }
     });
     resetGame();
-    alert(player[player.curentPlayer].name+" win's!");
+    alert(player[player.curentPlayer].name+" win's! it took "+time+" seconds");
   } else if (!winArr.includes(0)) {
     resetGame();
     alert("Tie!");
